@@ -9,48 +9,23 @@ resource "aws_api_gateway_model" "stats" {
     "additionalProperties": false,
     "properties": {
         "u": {
-            "type": "string",
-            "maxLength": 1024
+          "type": "string",
+          "maxLength": 1024
         },
         "r": {
-            "type": "string",
-            "maxLength": 1024
+          "type": "string",
+          "maxLength": 1024
         },
         "t": {
-            "type": "integer"
+          "type": "integer"
         },
-        "a": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "s": {
-                    "type": "string",
-                    "maxLength": 1024
-                },
-                "v": {
-                    "type": "number"
-                }
-            }
-        },
-        "p": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "ttfb": {
-                    "type": "integer"
-                },
-                "fcp": {
-                    "type": "integer"
-                },
-                "lcp": {
-                    "type": "integer"
-                }
-            }
+        "v": {
+          "type": "number"
         }
     },
     "required": [
-        "u",
-        "t"
+      "u",
+      "t"
     ],
     "title": "Codefiend Hit"
 }

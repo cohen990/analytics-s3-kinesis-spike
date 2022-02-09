@@ -25,9 +25,11 @@ resource "aws_api_gateway_integration" "stats" {
 
   request_templates = {
     "application/json" = <<EOF
+#set($input.path('$').ua = $method.request.header.User-Agent)
+#set($input.path('$').c = $method.request.header.cf-ipcountry)
 {
     "DeliveryStreamName": "${var.firehose_name}",
-    "Record": {"Data": "$util.base64Encode($input.body)" }
+    "Record": {"Data": "$util.base64Encode($input.json('$'))" }
 }
 EOF
   }
