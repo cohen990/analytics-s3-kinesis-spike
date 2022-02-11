@@ -21,7 +21,6 @@ resource "aws_api_gateway_deployment" "main" {
 
   depends_on = [
     aws_api_gateway_integration.stats,
-    aws_api_gateway_integration.options,
   ]
 
   lifecycle {
