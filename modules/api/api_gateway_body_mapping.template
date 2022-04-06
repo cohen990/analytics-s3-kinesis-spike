@@ -1,4 +1,0 @@
-{
-    "DeliveryStreamName": "PUT-S3-iB1vu",
-    "Record": {"Data": "$util.base64Encode($input.body)" }
-}

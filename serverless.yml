@@ -1,0 +1,22 @@
+service: analytics-s3-kinesis-spike
+variablesResolutionMode: 20210326
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: eu-west-1
+  lambdaHashingVersion: 20201221
+  stage: main
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Resource: 'arn:aws:firehose:eu-west-1:973493953450:deliverystream/metrics-stream'
+          Action: 'firehose:PutRecord'
+
+package:
+  exclude:
+    - node_modules/**
+
+functions:
+  handler:
+    handler: src/handler.handler

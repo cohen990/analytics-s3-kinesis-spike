@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.1",
+  "description": "spike to test dumping analytics messages into s3",
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "devDependencies": {
+    "serverless": "^2.48.0"
+  },
+  "author": "Sammie Cohen",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1108.0"
+  }
+}
